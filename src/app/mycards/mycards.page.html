@@ -1,0 +1,107 @@
+<div class="header">
+  <div routerLink="/home" class="logoname"><i class="uil uil-angle-left-b"></i></div>
+ <div class="searchicon">
+  <div routerLink="/search"><i class="uil uil-search"></i></div>
+  <div><i class="uil uil-share-alt"></i></div>
+</div>
+</div>
+<ion-content color="secondary">
+
+<div class="mytitle">
+         <div>Cart ({{order}})</div>
+</div>
+
+<div class="cart" *ngFor="let o of card">
+ <div class="cartimg"><img [src]="o.image[0]" alt=""></div>
+  <div class="cartinfo">
+      <div class="cc">
+        <div class="cartname"><div>{{o.name}}</div></div>
+        <div (click)="presentAlert(o)" class="remove"><i class="uil uil-trash"></i></div>
+      </div>
+      <div class="cc">
+        <div class="cartprice"><div>{{o.price}} MAD</div></div>
+        <div class="cartorders">
+          <div class="ngng">
+            <div (click)="addorder(o)"><i class="uil uil-plus"></i></div>
+            <div><div>{{o.order}}</div></div>
+            <div (click)="incorder(o)"><i class="uil uil-minus"></i></div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+
+<div class="emptycard" *ngIf="this.total==0">
+     <img src="../../assets/icon/basket.gif" alt="">
+     <div class="tx"><div>Your basket is Empty</div> <ion-icon name="sad-outline"></ion-icon></div>
+</div>
+
+
+
+
+
+
+
+<ion-modal #modal trigger="open-modal" [isOpen]="toggleopen" [initialBreakpoint]="0.50" [breakpoints]="[0, 0.25, 0.5, 0.75]">
+  <ng-template>
+    <ion-content>
+    <div class="allpay">
+       <ng-container *ngIf="checknumber===''">
+        <div class="finish">
+          <div>Complete your information</div>
+        </div>
+        <div class="uk-margin hhin">
+          <input name="name" [(ngModel)]="name" class="uk-input" type="text" placeholder="Name" aria-label="Input">
+      </div>
+      <div class="uk-margin hhin">
+        <input name="phone" [(ngModel)]="phone" class="uk-input" type="text" placeholder="phone number" aria-label="Input">
+    </div>
+    <div class="uk-margin hhin">
+      <input name="adresse" [(ngModel)]="adresse" type="text" class="uk-input" type="text" placeholder="Adress" aria-label="Input">
+  </div>
+  <button (click)="updateuser()"   mat-flat-button class=" hhin" color="warn" id="open-modal" expand="block">Complete</button>
+       </ng-container>
+       <ng-container *ngIf="checknumber!=''">
+
+          <div class="getorder">
+             <div class="titorder"><div>Complete your Order</div></div>
+                <div class="or">You have : {{order}} order</div>
+                <div class="or">Total : {{total}} MAD</div>
+                <div><button (click)="sendorder()" class="orderbtn" mat-flat-button color="warn">Complete</button></div>
+
+          </div>
+
+
+
+       </ng-container>
+
+
+    </div>
+    </ion-content>
+  </ng-template>
+</ion-modal>
+
+<!-- //------------- -->
+
+
+</ion-content>
+
+<div class="tabs">
+  <div class="allprice">
+    Total : {{this.total}} MAD
+  </div>
+  <button [disabled]="this.total==0"  mat-flat-button color="warn" (click)="openmodel()"><i class="uil uil-shopping-cart-alt"></i> buy now</button>
+</div>
+
+
+<!-- <button mat-flat-button color="warn" id="open-modal" expand="block">Buy now</button> -->
+
+<div class="loadingpage" *ngIf="isloading() || successufullytoggle">
+  <div class="dialog slide-top">
+    <div *ngIf="isloading()" uk-spinner></div>
+      <img *ngIf="!isloading()" src="../../assets/icon/check.png" alt="">
+      <div *ngIf="!isloading()">Order send successfully</div>
+
+  </div>
+
+</div>

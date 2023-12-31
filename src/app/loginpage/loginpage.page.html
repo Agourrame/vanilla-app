@@ -1,0 +1,33 @@
+
+
+<ion-content color="secondary">
+
+  <div class="logo">
+     
+      <div>Vanilla</div>
+  </div>
+  <div class="logincontain">
+    <div class="lll titr formtit">Login</div>
+      <div class="lll titr">Email</div>
+
+        <div class="uk-inline lll">
+            <span class="uk-form-icon" uk-icon="icon: user"></span>
+            <input [(ngModel)]="Form.email" name="email" class="uk-input int" type="text" aria-label="Not clickable icon">
+        </div>
+
+    <div class="lll  titr">Password</div>
+
+      <div class="uk-inline lll int">
+          <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: lock"></span>
+          <input [(ngModel)]="Form.password" name="password"  class="uk-input int" type="password" aria-label="Not clickable icon">
+      </div>
+      <mat-checkbox class="example-margin lll  titr">Remember me!</mat-checkbox>
+      <button *ngIf="!isloading()" mat-flat-button class="cbtn lll" color="primary" (click)="login()">Log in</button>
+      <button *ngIf="isloading()" mat-stroked-button class="cbtn lll" ><div uk-spinner></div></button>
+      <div style="color: black;">or</div>
+      <div  class="google" (click)="googlelogin()" ><img src="../../assets/icon/Google.png" alt=""> <div style="color: black;">Log in with Google Account</div></div>
+             <div class="sinsin">Don't have an account ? <a routerLink="/sinuppage">Sign up</a></div>
+  </div>
+
+
+</ion-content>

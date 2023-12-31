@@ -1,0 +1,107 @@
+<div class="header">
+  <div routerLink="/home" class="logoname"><i class="uil uil-angle-left-b"></i></div>
+ <div class="searchicon">
+  <div><i class="uil uil-share-alt"></i></div>
+</div>
+</div>
+<ion-content color="secondary">
+<div class="searchlebal">
+    <div>Search page</div>
+</div>
+  <div class="search">
+    <form class="uk-search uk-search-default">
+      <span uk-search-icon></span>
+      <input name="search" [(ngModel)]="search" style="background-color: white;" class="uk-search-input " type="search" placeholder="Search" aria-label="Search">
+    </form>
+  </div>
+  <div class="catigory">
+    <div class="catele trt">Phones</div>
+    <div class="catele">Tabletts</div>
+    <div class="catele">Airpods</div>
+    <div class="catele">Phones</div>
+    <div class="catele">Phones</div>
+  </div>
+<div class="allpro">
+
+<ng-container *ngIf="!togglep">
+  <ng-container  *ngFor="let o of products">
+    <div class="card" routerLink="/cardinfo" (click)="getpropro(o)"  *ngIf="search===''|| o.name.toLowerCase().includes(search)" >
+      <div class="cimg" >
+        <img [src]="o.image[0]" alt="">
+        <span class="uk-label uk-label-success">{{o.type}}</span>
+      </div>
+      <div class="nnpro">{{o.name}}</div>
+      <div class="titlec">{{o.title}}</div>
+      <div class="prr" >
+        <div><span *ngIf="o.promotion>0" class="uk-label uk-label-warning">-{{o.promotion}}%</span></div>
+        <div>
+          <div>{{(o.price-((o.price*o.promotion)/100))}} MAD</div>
+          <div class="sps">{{o.price}} MAD</div>
+        </div>
+      </div>
+    </div>
+</ng-container>
+</ng-container>
+
+<!----------------------------------------------------- -->
+
+<ng-container *ngIf="togglep">
+  <ng-container  *ngFor="let o of products">
+    <div class="card" routerLink="/cardinfo" (click)="getpropro(o)"  *ngIf="search===''|| o.name.toLowerCase().includes(search)" >
+      <div class="cimg" >
+        <ion-skeleton-text animated style="width: 110px;height: 110px;"></ion-skeleton-text>
+      </div>
+      <div class="nnpro"><ion-skeleton-text animated style="width: 60px;height: 22px;"></ion-skeleton-text></div>
+      <div class="titlec"><ion-skeleton-text animated style="width: 150px;height: 20px;"></ion-skeleton-text></div>
+      <div class="prr" >
+        <div><ion-skeleton-text animated style="width: 40px;height: 25px;"></ion-skeleton-text></div>
+        <div>
+          <div><ion-skeleton-text animated style="width: 60px;"></ion-skeleton-text></div>
+          <div class="sps"><ion-skeleton-text animated style="width: 60px;"></ion-skeleton-text></div>
+        </div>
+      </div>
+    </div>
+</ng-container>
+</ng-container>
+
+</div>
+
+
+</ion-content>
+
+
+<!-- <div class="allpro">
+
+  <div class="card">
+    <div class="cimg"><img src="https://mobile.free.fr/webpublic/Apple_i_Phone_Pro_Violet_DUO_5b9b09900f.png" alt=""></div>
+    <div class="priced">
+      <div class="price">100 dh</div>
+      <div class="bar"></div>
+      <div class="pers">50%</div>
+    </div>
+    <div class="titlec">iphone 14 pro max </div>
+    <ion-button shape="round">
+      Bay
+      <ion-icon slot="end"  name="cart-outline"></ion-icon>
+    </ion-button>
+  </div>
+</div> -->
+
+
+
+<!--
+<ng-container *ngFor="let o of products">
+  <div class="card"  *ngIf="search===''|| o.name.toLocaleLowerCase().includes(search)">
+    <div class="cimg"><img [src]="o.image[1]" alt=""></div>
+    <div class="priced">
+      <div class="price">{{o.price}} DH</div>
+      <div class="bar"></div>
+      <div class="pers">{{o.promotion}} %</div>
+    </div>
+    <div class="titlec">{{o.name}}</div>
+    <ion-button shape="round">
+      Bay
+      <ion-icon slot="end"  name="cart-outline"></ion-icon>
+    </ion-button>
+  </div>
+</ng-container> -->

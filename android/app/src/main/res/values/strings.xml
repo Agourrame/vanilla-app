@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Vanilla</string>
+    <string name="title_activity_main">Vanilla</string>
+    <string name="package_name">com.app.hello</string>
+    <string name="custom_url_scheme">com.app.hello</string>
+    <string name="server_client_id">77832034966-4182jg7us6se69jdpkrkngbgp7mvkr3u.apps.googleusercontent.com</string>
+</resources>

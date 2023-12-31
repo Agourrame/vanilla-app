@@ -1,0 +1,37 @@
+
+
+<ion-content color="secondary">
+  <div class="logo">
+    <img src="../../assets/icon/nnn (2).png" alt="">
+    <div>Vanilla</div>
+</div>
+<div class="logincontain">
+  <div class="lll titr formtit">Sign in</div>
+    <div class="lll titr">Email</div>
+
+      <div class="uk-inline lll">
+          <span class="uk-form-icon" uk-icon="icon: user"></span>
+          <input [(ngModel)]="Form.email" name="email" class="uk-input int" type="text" aria-label="Not clickable icon">
+      </div>
+
+  <div class="lll  titr">Password</div>
+
+    <div class="uk-inline lll int">
+        <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: lock"></span>
+        <input  class="uk-input int" type="password" aria-label="Not clickable icon">
+    </div>
+
+    <div class="lll  titr">Password Confirm</div>
+
+    <div class="uk-inline lll int">
+        <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: lock"></span>
+        <input [(ngModel)]="Form.password" name="password"  class="uk-input int" type="password" aria-label="Not clickable icon">
+    </div>
+
+    <button *ngIf="!isloading()" mat-flat-button class="cbtn lll" color="primary" (click)="sinup()">Sign in</button>
+    <button *ngIf="isloading()" mat-flat-button class="cbtn lll" color="primary"><div uk-spinner></div></button>
+
+
+</div>
+
+</ion-content>

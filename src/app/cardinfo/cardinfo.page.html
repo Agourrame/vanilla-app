@@ -1,0 +1,89 @@
+<div class="header">
+  <div routerLink="/home" class="logoname"><i class="uil uil-angle-left-b"></i></div>
+ <div class="searchicon">
+  <div>Details Products</div>
+</div>
+</div>
+<ng-container *ngFor="let o of products">
+<ion-content color="secondary">
+
+
+  <div class="uk-margin-top" uk-slideshow="animation: push">
+
+    <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1">
+
+        <ul class="uk-slideshow-items">
+            <li *ngFor="let im of o.image;let index = index;">
+              <div><img [src]="im" alt=""></div>
+            </li>
+        </ul>
+
+        <a class="uk-position-center-left uk-position-small uk-hover aa" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+        <a class="uk-position-center-right uk-position-small uk-hover aa" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+
+    </div>
+<!--
+    <ul class="uk-slideshow-nav uk-dotnav uk-flex-center uk-margin"></ul> -->
+
+</div>
+<div class="proname">
+  <div>{{o.name}}</div>
+  <div><span class="uk-label uk-label-warning ff">{{o.type}}</span></div>
+</div>
+<div class="rate">
+  <input type="radio" id="star5" name="rate" value="5" />
+  <label for="star5" title="text">5 stars</label>
+  <input type="radio" id="star4" name="rate" value="4" />
+  <label for="star4" title="text">4 stars</label>
+  <input type="radio" id="star3" name="rate" value="3" />
+  <label for="star3" title="text">3 stars</label>
+  <input type="radio" id="star2" name="rate" value="2" />
+  <label for="star2" title="text">2 stars</label>
+  <input type="radio" id="star1" name="rate" value="1" />
+  <label for="star1" title="text">1 star</label>
+</div>
+<div class="proprice">
+  <div>{{o.price}} MAD</div>
+  <div *ngIf="o.promotion>0" style="padding-left: 20px;"><span class="uk-label uk-label-success ff">-{{o.promotion}}%</span></div>
+</div>
+<div class="avl">
+  <div>(Available in stock)</div>
+</div>
+<div class="about">
+  <div>About :</div>
+</div>
+<div class="protitle">
+  <div>{{o.title}}</div>
+</div>
+
+</ion-content>
+
+<div class="tabs">
+  <button class="just" *ngIf="!islogin" (click)="changetoggle()" id="open-modal" expand="block"  mat-flat-button color="warn" ><i class="uil uil-shopping-cart-alt"></i> Add to cart</button>
+  <button class="just" *ngIf="islogin"  (click)="addtomycard(o)"  mat-flat-button color="warn" ><i class="uil uil-shopping-cart-alt"></i> Add to cart</button>
+</div>
+
+<ion-modal
+#modal
+trigger="open-modal"
+[initialBreakpoint]="0.30"
+[breakpoints]="[0, 0.25, 0.5, 0.75]"
+[isOpen]="toggle"
+>
+<ng-template>
+  <ion-content class="ion-padding">
+    <div class="connection">
+         <div class="con-title">
+          <div><img src="../../assets/icon/nnn (2).png" alt=""></div>
+          <div>Go login page</div>
+         </div>
+         <div class="con-button">
+          <button (click)="changetoggle()" mat-flat-button routerLink="/login" color="warn">Connection</button>
+         </div>
+    </div>
+  </ion-content>
+</ng-template>
+</ion-modal>
+
+</ng-container>
+

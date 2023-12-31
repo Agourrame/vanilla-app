@@ -1,0 +1,61 @@
+<div class="header">
+  <div class="logoname">Profile</div>
+ <div class="searchicon">
+  <!-- <div routerLink="/search"><i class="uil uil-search"></i></div> -->
+  <div (click)="updatebtn()" *ngIf="!toggle"><i class="uil uil-pen"></i></div>
+  <div (click)="updateinfo()" *ngIf="toggle"><ion-icon name="save-outline"></ion-icon></div>
+</div>
+</div>
+
+<ion-content color="secondary">
+
+
+<div class="profile">
+  <div class="proimg">
+    <img *ngIf="userimage===''" src="../../assets/icon/Portrait_Placeholder.png" alt="">
+    <img *ngIf="userimage!=''" [src]="userimage" alt="">
+  </div>
+</div>
+
+<div class="namepro">
+  <div>{{username}}</div>
+</div>
+
+<div class="info">
+
+  <div class="infoo"><div>Email</div>
+       <div>{{useremail}}</div>
+  </div>
+
+  <div class="infoo"><div>Name</div>
+       <div *ngIf="!toggle">{{username}}</div>
+       <div *ngIf="toggle"><ion-input  [clearInput]="true" name="username" [(ngModel)]="username" placeholder="Name" [value]="username"></ion-input></div>
+  </div>
+
+  <div class="infoo"><div>Number</div>
+       <div *ngIf="!toggle">+212 {{phoneuser}}</div>
+       <div *ngIf="toggle"><ion-input  [clearInput]="true" name="phoneuser"[(ngModel)]="phoneuser" placeholder="phone" [value]="phoneuser"></ion-input></div>
+  </div>
+
+  <div class="infoo"><div>Adresse</div>
+       <div *ngIf="!toggle">{{useradresse}}</div>
+       <div *ngIf="toggle"><ion-input  [clearInput]="true" name="useradresse" [(ngModel)]="useradresse" placeholder="Adresse" [value]="useradresse"></ion-input></div>
+  </div>
+
+</div>
+<div class="logoutbtn">
+  <button (click)="logout();"class="logoutbtn" mat-stroked-button>Log Out <i class="uil uil-sign-out-alt"></i></button>
+</div>
+
+
+
+</ion-content>
+<div class="tabs">
+  <ion-icon routerLink="/home" name="home-outline"></ion-icon>
+  <div routerLink="/mycards">
+    <ion-icon name="cart-outline"></ion-icon>
+    <!-- <ion-badge size="large" color="danger">10</ion-badge> -->
+  </div>
+  <div class="hicon"><ion-icon routerLink="/userspace" name="person-outline"></ion-icon></div>
+  <ion-icon routerLink="/setting" name="settings-outline"></ion-icon>
+</div>

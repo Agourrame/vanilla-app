@@ -1,20 +1,167 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <div class="header">
+    <div class="logoname"><div class="userimage"><img src="../../assets/icon/nnn (2).png" alt=""></div><div>Vanilla</div></div>
+   <div class="searchicon">
+    <div routerLink="/search"><i class="uil uil-search"></i></div>
+    <div><a class="a2a_dd"><i class="uil uil-share-alt"></i></a></div>
   </div>
-</ion-content>
+  </div>
+
+  <ion-content class="ion-padding" color="secondary">
+    <ion-refresher slot="fixed" slot="fixed" (ionRefresh)="handleRefresh($event)">
+      <ion-refresher-content
+      ></ion-refresher-content>
+    </ion-refresher>
+
+
+      <!-- <div class="connection">
+        <div>Connection</div>
+        <div ><ion-button routerLink="/login" class="btc"  color="light" shape="round">log in</ion-button></div>
+      </div> -->
+
+
+
+      <div class="uk-position-relative uk-visible-toggle uk-light slidphoto bord" tabindex="-1" uk-slideshow="animation: push">
+
+        <ul class="uk-slideshow-items bord">
+          <li>
+            <div class="uk-position-cover uk-animation-kenburns uk-animation-reverse uk-transform-origin-top-right">
+                <img src="../../assets/icon/pub3.jpg" alt="" uk-cover>
+            </div>
+        </li>
+        <li>
+          <div class="uk-position-cover uk-animation-kenburns uk-animation-reverse uk-transform-origin-top-right">
+              <img src="../../assets/icon/pub2.jpg" alt="" uk-cover>
+          </div>
+      </li>
+      <li>
+        <div class="uk-position-cover uk-animation-kenburns uk-animation-reverse uk-transform-origin-top-right">
+            <img src="../../assets/icon/pub1.jpg" alt="" uk-cover>
+        </div>
+    </li>
+
+
+
+        </ul>
+
+        <!-- <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+        <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a> -->
+
+    </div>
+
+    <div class="catigory">
+      <div class="catele trt">Phones</div>
+      <div class="catele">Tablets</div>
+      <div class="catele">Airpods</div>
+      <div class="catele">Headphone</div>
+      <div class="catele">Keyboards</div>
+    </div>
+
+    <div class="showtitle">
+     <div class="tit">Best Promotions</div>
+     <div class="see"  routerLink="/search" >See all <i class="uil uil-angle-right"></i></div>
+    </div>
+
+    <div *ngIf="!togglep" class="show_products">
+
+      <div *ngFor="let o of productwithpro" class="card" routerLink="/cardinfo" (click)="getpropro(o)" >
+        <div class="cimg" >
+          <img [src]="o.image[0]" alt="">
+          <span class="uk-label uk-label-success">{{o.type}}</span>
+        </div>
+        <div class="nnpro">{{o.name}}</div>
+        <div class="titlec">{{o.title}}</div>
+        <div class="prr" >
+          <div><span *ngIf="o.promotion>0" class="uk-label uk-label-warning">-{{o.promotion}}%</span></div>
+          <div>
+            <div>{{(o.price-((o.price*o.promotion)/100))}} MAD</div>
+            <div class="sps">{{o.price}} MAD</div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <div *ngIf="togglep" class="show_products">
+
+      <div *ngFor="let o of productwithpro" class="card" routerLink="/cardinfo" (click)="getpropro(o)" >
+        <div class="cimg" >
+            <ion-skeleton-text animated style="width: 110px;height: 110px;"></ion-skeleton-text>
+        </div>
+        <div class="nnpro"><ion-skeleton-text animated style="width: 140px;height: 22px;"></ion-skeleton-text></div>
+        <div class="titlec"><ion-skeleton-text animated style="width: 170px;height: 20px;"></ion-skeleton-text></div>
+        <div class="prr" >
+          <div><ion-skeleton-text animated style="width: 40px;height: 25px;"></ion-skeleton-text></div>
+          <div>
+            <div><ion-skeleton-text animated style="width: 80px;"></ion-skeleton-text></div>
+            <div class="sps"><ion-skeleton-text animated style="width: 60px;"></ion-skeleton-text></div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+<!-- <div class="connection">
+        <div>Connection</div>
+        <div ><ion-button routerLink="/login" class="btc"  color="light" shape="round">log in</ion-button></div>
+      </div> -->
+
+      <div class="showtitle">
+        <div class="tit">All Categories</div>
+        <div class="see"  routerLink="/search">See all <i class="uil uil-angle-right"></i></div>
+       </div>
+
+       <div *ngIf="!togglep" class="show_products">
+
+        <div *ngFor="let o of allproduct" class="card" routerLink="/cardinfo" (click)="getpropro(o)" >
+          <div class="cimg">
+            <img [src]="o.image[0]" alt="">
+            <span class="uk-label uk-label-success">{{o.type}}</span>
+          </div>
+          <div class="nnpro">{{o.name}}</div>
+          <div class="titlec">{{o.title}}</div>
+          <div class="prr" >
+            <div><span *ngIf="o.promotion>0" class="uk-label uk-label-warning">-{{o.promotion}}%</span></div>
+            <div>
+              <div>{{(o.price-((o.price*o.promotion)/100))}} MAD</div>
+              <div class="sps">{{o.price}} MAD</div>
+            </div>
+
+          </div>
+        </div>
+
+       </div>
+
+       <div *ngIf="togglep" class="show_products">
+
+        <div *ngFor="let o of productwithpro" class="card" routerLink="/cardinfo" (click)="getpropro(o)" >
+          <div class="cimg" >
+              <ion-skeleton-text animated style="width: 110px;height: 110px;"></ion-skeleton-text>
+          </div>
+          <div class="nnpro"><ion-skeleton-text animated style="width: 140px;height: 22px;"></ion-skeleton-text></div>
+          <div class="titlec"><ion-skeleton-text animated style="width: 170px;height: 20px;"></ion-skeleton-text></div>
+          <div class="prr" >
+            <div><ion-skeleton-text animated style="width: 40px;height: 25px;"></ion-skeleton-text></div>
+            <div>
+              <div><ion-skeleton-text animated style="width: 80px;"></ion-skeleton-text></div>
+              <div class="sps"><ion-skeleton-text animated style="width: 60px;"></ion-skeleton-text></div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+  </ion-content>
+<div class="tabs">
+  <div class="hicon"><ion-icon routerLink="/home" name="home-outline"></ion-icon></div>
+  <div routerLink="/mycards">
+    <ion-icon name="cart-outline"></ion-icon>
+    <ion-badge *ngIf="order>0"  size="large" color="danger">{{order}}</ion-badge>
+  </div>
+  <ion-icon routerLink="/userspace" name="person-outline"></ion-icon>
+  <ion-icon routerLink="/setting" name="settings-outline"></ion-icon>
+</div>
+

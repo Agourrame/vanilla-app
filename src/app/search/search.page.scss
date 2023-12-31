@@ -1,0 +1,222 @@
+.allpro{
+  padding: 5px;
+  display: grid;
+  grid-gap:0.2em;
+  /* justify-items: center; */
+  align-items: center;
+  grid-template-columns: repeat(2,1fr);
+}
+.card{
+  height: 290px;
+  margin: 5px;
+  flex-shrink: 0;
+  flex-basis: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+  padding-bottom: 10px;
+  border-radius: 8px;
+  color: #326780;
+  background-color: white;
+}
+.cimg{
+  position: relative;
+  width: 100%;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cimg span{
+  position: absolute;
+  z-index: 9999;
+  top: 10px;
+  right: 10px;
+  padding: 5px;
+  border-radius: 5px;
+}
+.card img{
+  width: 95px;
+  object-fit: cover;
+}
+.priced{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #78a5c874;
+  height: 40px;
+  width: 75%;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 17px;
+  color:#326780 ;
+
+}
+.bar{
+  width: 1px;
+  height: 25px;
+  background-color: rgb(0, 0, 0);
+}
+.titlec{
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.header{
+  height: 60px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: #E9EEF2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 25px;
+}
+
+.searchicon{
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 40px;
+}
+.searchicon div,.logoname{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #326780;
+  font-size: 20px;
+}
+.search{
+  height: 80px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.search form{
+  width: 95%;
+
+}
+.search input{
+   border-radius: 10px;
+   height: 50px;
+}
+.titlesearch{
+  height: 40px;
+  background-color: #78A6C8;
+}
+.catigory{
+  height: 70px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  overflow-x: scroll;
+  padding-left: 5px;
+}
+.catigory::-webkit-scrollbar {
+  display: none;
+}
+.catele{
+  background-color: #ffffff;
+  height: 50px;
+  color: #326789;
+  min-width: 100px;
+  border-radius: 25px;
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 5px;
+  padding-right: 5px;
+  flex-shrink: 0;
+  font-size: 16px;
+  font-weight: bold;
+  flex-basis: auto;
+}
+.trt{
+  background-color: #326789;
+  color: white;
+}
+.searchlebal{
+  color: #326780;
+  font-weight: bold;
+  font-size: 18px;
+  padding-left: 15px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+.nnpro{
+  width: 90%;
+  font-size: 16px;
+  font-weight: bold;
+}
+.prr{
+
+  height: 50px;
+  font-size: 17px;
+  color: #E65C4F;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 85%;
+
+  span{
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+}
+.titlec{
+  font-size: 13px;
+  height: 15px;
+  width: 90%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 10px;
+}
+.sps{
+  font-size:13px ;
+  text-decoration: line-through;
+  color: #78A6C8;
+}
+.slide-top {
+	-webkit-animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+@-webkit-keyframes slide-top {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(-100px);
+            transform: translateY(-100px);
+  }
+}
+@keyframes slide-top {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(-100px);
+            transform: translateY(-100px);
+  }
+}
+ion-skeleton-text {
+  --border-radius: 10px;
+  --background: rgba(12, 29, 124, 0.065);
+  --background-rgb: 0, 0, 125;
+}

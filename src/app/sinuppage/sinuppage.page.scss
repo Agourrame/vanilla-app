@@ -1,0 +1,54 @@
+.logo{
+
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+.logo img{
+  width: 88px;
+  border-radius: 10px;
+}
+
+.logo div{
+  font-size: 25px;
+  font-weight: bold;
+  color: #326789;
+}
+.logincontain{
+
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+.cbtn{
+  background-color: #326789;
+  height: 50px;
+  border-radius: 10px;
+}
+
+.lll{
+  width: 80%;
+}
+.titr{
+  color:#326789;
+}
+
+.int{
+  height: 50px;
+  border-radius: 10px;
+}
+.sinsin{
+  color: #326789;
+}
+.sinsin a{
+ color: rgb(0, 0, 171);
+}
+.formtit
+{
+  font-size: 25px;
+  font-weight: bold;
+}

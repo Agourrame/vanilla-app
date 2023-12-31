@@ -1,0 +1,87 @@
+.tabs{
+  bottom: 0px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 30px;
+  color: #326780;
+  font-weight: bold;
+  border-top: 0.5px rgba(112, 110, 110, 0.573) solid;
+}
+.hicon{
+  background-color:#326789;
+  padding: 8px;
+  border-radius: 50%;
+  color: #ffffff;
+
+}
+.hicon ion-icon{
+  font-size: 20px;
+}
+.header{
+  height: 60px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: var(--ion-color-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 25px;
+}
+.logoname{
+  font-size: 22px;
+  font-weight: bold;
+  color: #326789;
+}
+.searchicon{
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 40px;
+}
+.searchicon div{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(112, 112, 112);
+  font-size: 20px;
+}
+.itemtextcolor{
+  color: rgb(112, 112, 112);
+  font-size: 16px;
+  font-weight: bold;
+  font-family: 'Rubik', sans-serif;
+}
+.sss{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 180px;
+  flex-direction: column;
+  margin-top: 20px;
+}
+.sicon{
+  width: 80%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  ion-icon{
+    font-size: 30px;
+    color: rgb(112, 112, 112);
+  }
+}
+
+.im{
+  border-radius: 6px;
+}
+ion-icon{
+  font-size: 30px;
+}
